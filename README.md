@@ -60,29 +60,23 @@ README.md
 8. Build and run
 
   ```bash
+
   dotnet build
-  ```
 
   # set env
-  ```bash
   AZURE_STORAGE_CONNECTION_STRING="DefaultEndpointsProtocol=https;EndpointSuffix=core.windows.net;AccountName=[unique-name];AccountKey=[account-key]"
-  ```
 
   # send message, queue name is hardcoded in Program.cs
-  ```bash
   dotnet run "hi there"
 
   az storage message peek --queue-name newsqueue --connection-string "$AZURE_STORAGE_CONNECTION_STRING"
-  ```
 
   # receive message
-  ```bash
   dotnet run
 
   az storage message peek --queue-name newsqueue --connection-string "$AZURE_STORAGE_CONNECTION_STRING"
-  ```
 
   # delete queue
-  ```bash
   az storage queue delete --name newsqueue --connection-string "$AZURE_STORAGE_CONNECTION_STRING"
+
   ```
